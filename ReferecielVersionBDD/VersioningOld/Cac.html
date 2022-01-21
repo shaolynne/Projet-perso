@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cac</title>
+    <script src="Cac.js"></script>
+</head>
+<body>
+<h1 style="text-align: center"> Cac</h1>
+<a href="Bench.html">Bench</a>
+<a href="Rit.html">Rit</a>
+<a href="Rim.html"> Rim </a>
+<a href="Renouv.html"> Renouv</a>
+<a href="XnetAni.html"> XnetAni</a>
+<a href="Prod.html"> Prod</a>
+<a href="Formation.html"> Formation</a>
+<br/><br/>
+<p>Cac = [</p>
+<div id="Cac"></div>
+<p>]</p>
+<script>
+    Cac.forEach(function (cac) {
+        if(cac.Application === "ADDAGIO" | cac.Application === "AVISE" | cac.Application === "CAMELEON"
+            | cac.Application === "CONTRALTO" | cac.Application === "DATAHUB" | cac.Application === "GRC SIEBEL" | cac.Application === "MAESTRO"
+            | cac.Application ==="PRESTO" | cac.Application === "GRAF" | cac.Application === "RONDO" | cac.Application === "SOPRANO"
+            | cac.Application === "TEMPO" | cac.Application === "TRIBOX" | cac.Application === "VIBRALTO" ){
+
+            document.getElementById('Cac').innerHTML += '{' +"\"Application\"" + ' : ' + '"'+cleanHTML(cac.Application)+ '"'+ ',' + '<br/>'
+            document.getElementById('Cac').innerHTML += "\"Unité de Packaging\"" + ' : ' + '"'+cleanHTML(cac["Unité de Packaging"])+ '"' + ',' + '<br/>'
+            document.getElementById('Cac').innerHTML += "\"Packages de livraison\"" + ' : ' + '["' + cleanHTMLInTab(cac["Packages de livraison"]) + '"],' + '<br/>'
+            document.getElementById('Cac').innerHTML += "\"Date d'installation\"" + ' : ' + '[ "' + cleanHTMLInTab(cac["Date d'installation"]) + '"]' + '<br/>' + '},'+'<br/>'
+        }
+    })
+
+    function cleanHTMLInTab(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '" , "');
+        }
+    }
+    function cleanHTML(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formation</title>
+    <script src="Formation.js"></script>
+</head>
+<body>
+<h1 style="text-align: center"> Rit</h1>
+<a href="Bench.html">Bench</a>
+<a href="Rim.html"> Rim</a>
+<a href="Cac.html"> Cac</a>
+<a href="Renouv.html"> Renouv</a>
+<a href="XnetAni.html"> XnetAni</a>
+<a href="Prod.html"> Prod</a>
+<a href="Formation.html"> Formation</a>
+<br/><br/>
+<p>Formation = [</p>
+<div id="Formation"></div>
+<p>]</p>
+<script>
+    Formation.forEach(function (Formation) {
+        if(Formation.Application === "ADDAGIO" | Formation.Application === "AVISE" | Formation.Application === "CAMELEON"
+            | Formation.Application === "CONTRALTO" | Formation.Application === "DATAHUB" | Formation.Application === "GRC SIEBEL" | Formation.Application === "MAESTRO"
+            | Formation.Application ==="PRESTO" | Formation.Application === "GRAF" | Formation.Application === "RONDO" | Formation.Application === "SOPRANO"
+            | Formation.Application === "TEMPO" | Formation.Application === "TRIBOX" | Formation.Application === "VIBRALTO" ){
+
+        document.getElementById('Formation').innerHTML += '{' +"\"Application\"" + ' : ' + '"'+cleanHTML(Formation.Application)+ '"'+ ',' + '<br/>'
+            document.getElementById('Formation').innerHTML += "\"Unité de Packaging\"" + ' : ' + '"'+cleanHTML(Formation["Unité de Packaging"])+ '"' + ',' + '<br/>'
+            document.getElementById('Formation').innerHTML += "\"Packages de livraison\"" + ' : ' + '["' + cleanHTMLInTab(Formation["Packages de livraison"]) + '"],' + '<br/>'
+            document.getElementById('Formation').innerHTML += "\"Date d'installation\"" + ' : ' + '[ "' + cleanHTMLInTab(Formation["Date d'installation"]) + '"]' + '<br/>' + '},'+'<br/>'
+        }
+    })
+
+    function cleanHTMLInTab(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '" , "');
+        }
+    }
+    function cleanHTML(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '');
+        }
+    }
+</script>
+</body>
+</html>

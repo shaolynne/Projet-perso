@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>renouv</title>
+    <script src="Renouv.js"></script>
+</head>
+<body>
+<h1 style="text-align: center"> Renouv</h1>
+<a href="Bench.html">Bench</a>
+<a href="Rit.html">Rit</a>
+<a href="Cac.html"> Cac</a>
+<a href="Rim.html"> Rim</a>
+<a href="XnetAni.html"> XnetAni</a>
+<a href="Prod.html"> Prod</a>
+<a href="Formation.html"> Formation</a>
+<br/><br/>
+<p>Renouv = [</p>
+<div id="renouv"></div>
+<p>]</p>
+<script>
+
+    Renouv.forEach(function (renouv) {
+        if(renouv.Application === "ADDAGIO" | renouv.Application === "AVISE" | renouv.Application === "CAMELEON"
+            | renouv.Application === "CONTRALTO" | renouv.Application === "DATAHUB" | renouv.Application === "GRC SIEBEL" | renouv.Application === "MAESTRO"
+            | renouv.Application ==="PRESTO" | renouv.Application === "GRAF" | renouv.Application === "RONDO" | renouv.Application === "SOPRANO"
+            | renouv.Application === "TEMPO" | renouv.Application === "TRIBOX" | renouv.Application === "VIBRALTO" ){
+
+            document.getElementById('renouv').innerHTML += '{' + "\"Application\"" + ' : ' + '"'+cleanHTML(renouv.Application)+ '"'+ ',' + '<br/>'
+            document.getElementById('renouv').innerHTML += "\"Unité de Packaging\"" + ' : ' + '"'+cleanHTML(renouv["Unité de Packaging"])+ '"' + ',' + '<br/>'
+            document.getElementById('renouv').innerHTML += "\"Packages de livraison\"" + ' : ' + '["' + cleanHTMLInTab(renouv["Packages de livraison"]) + '"],' + '<br/>'
+            document.getElementById('renouv').innerHTML += "\"Date d'installation\"" + ' : ' + '[ "' + cleanHTMLInTab(renouv["Date d'installation"]) + '"]' + '<br/>' + '},'+'<br/>'
+        }
+
+    })
+
+    function cleanHTMLInTab(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '" , "');
+        }
+    }
+    function cleanHTML(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+@media screen and (max-width: 1300px) {
+    .logo {
+        display: none;
+    }
+    .Ref_tittle{
+        text-align: center;
+    }
+    html{
+        font-size: x-small;
+    }
+}
+
+@media screen and (min-width: 1565px){
+    .tab{
+        border-style: solid;
+        border-color:  #ff7f00;
+        border-width: 1px;
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (min-width: 1700px){
+    .tab{
+        border-style: solid;
+        border-color:  #ff7f00;
+        border-width: 1px;
+        padding: 5px 20px;
+    }
+    html{
+        text-align: center;
+        font-size: small;
+    }
+}
+html{
+    font-size: 12px;
+}
+
+.Ref_tittle{
+    text-align: center;
+    padding-left: 21%;
+    padding-right: 25%;
+    color: #ff7f00;
+}
+
+header{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 80px;
+}
+
+body{
+    background-color: white;
+}
+
+table{
+    text-align: center;
+    margin: 2%;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-style: solid;
+    border-color:  #ff7f00;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+a{
+    color: #ff7f00;
+    font-weight:bolder;
+}
+
+p{
+    font-size: 12px;
+}
+iframe{
+    width: 100%;
+    height: 570px;
+}
+.section-Planning{
+    margin: 2%;
+}
+td,th{
+    text-align: center;
+    border-style: solid;
+    border-color:  #ff7f00;
+    border-width: 1px;
+}
+.tabbtn{
+    text-align: center;
+    border-style: solid;
+    border-color:  #ff7f00;
+    border-width: 2px;
+    box-shadow:4px 4px 4px gray,
+    -1px -1px 2px white;
+}
+.tabbtn:active{
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #ff7f00;
+    border-style: inset;
+}
+.small{
+    font-size: 10px;
+    vertical-align: bottom;
+}
+.section-main{
+    font-size: 15px;
+    text-align: right;
+    margin: 0px 2%;
+}
+.icone{
+    float:right;
+}
+.info{
+    font-size: 12px;
+    text-align: left;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-left: 2%;
+}
+.liste{
+    text-align: left;
+    margin-top: 2%;
+}
+.planning{
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: #ff7f00;
+    text-align: left;
+}
+
+table tr:nth-child(even){
+    background-color: #FDCE76;
+    }
+table tr:nth-child(odd){
+    background-color: white;
+}
+.tablist {
+    vertical-align: sub;
+    text-align: left;
+    border-style: solid;
+    border-color:  #ff7f00;
+    border-width: 1px;
+    padding-left: 0px;
+    padding-top: 0px;
+}

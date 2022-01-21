@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prod</title>
+    <script src="Prod.js"></script>
+</head>
+<body>
+<h1 style="text-align: center"> Prod</h1>
+<a href="Rim.html">Rim</a>
+<a href="Rit.html">Rit</a>
+<a href="Cac.html"> Cac </a>
+<a href="Renouv.html"> Renouv </a>
+<a href="XnetAni.html"> XnetAni </a>
+<a href="Bench.html"> Bench </a>
+<a href="Formation.html"> Formation</a>
+<br/><br/>
+<p>Prod = [</p>
+<div id="prod"></div>
+<p>]</p>
+<script>
+
+    Prod.forEach(function (prod) {
+        if(prod.Application === "ADDAGIO" | prod.Application === "AVISE" | prod.Application === "CAMELEON"
+            | prod.Application === "CONTRALTO" | prod.Application === "DATAHUB" | prod.Application === "GRC SIEBEL" | prod.Application === "MAESTRO"
+            | prod.Application ==="PRESTO" | prod.Application === "GRAF" | prod.Application === "RONDO" | prod.Application === "SOPRANO"
+            | prod.Application === "TEMPO" | prod.Application === "TRIBOX" | prod.Application === "VIBRALTO" ){
+
+            document.getElementById('prod').innerHTML += '{' + "\"Application\"" + ' : ' + '"'+cleanHTML(prod.Application)+ '"'+ ',' + '<br/>'
+            document.getElementById('prod').innerHTML += "\"Unité de Packaging\"" + ' : ' + '"'+cleanHTML(prod["Unité de Packaging"])+ '"' + ',' + '<br/>'
+            document.getElementById('prod').innerHTML += "\"Packages de livraison\"" + ' : ' + '["' + cleanHTMLInTab(prod["Packages de livraison"]) + '"],' + '<br/>'
+            document.getElementById('prod').innerHTML += "\"Date d'installation\"" + ' : ' + '[ "' + cleanHTMLInTab(prod["Date d'installation"]) + '"]' + '<br/>' + '},'+'<br/>'
+        }
+    })
+
+    function cleanHTMLInTab(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '" , "');
+        }
+    }
+    function cleanHTML(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bench</title>
+    <script src="Bench.js"></script>
+</head>
+<body>
+<h1 style="text-align: center"> Bench</h1>
+<a href="Rim.html">Rim</a>
+<a href="Rit.html">Rit</a>
+<a href="Cac.html"> Cac </a>
+<a href="Renouv.html"> Renouv </a>
+<a href="XnetAni.html"> XnetAni </a>
+<a href="Prod.html"> Prod </a>
+<a href="Formation.html"> Formation</a>
+<br/><br/>
+<p>Bench = [</p>
+<div id="Bench"></div>
+<p>]</p>
+<script>
+
+    Bench.forEach(function (bench) {
+        if(bench.Application === "ADDAGIO" | bench.Application === "AVISE" | bench.Application === "CAMELEON"
+            | bench.Application === "CONTRALTO" | bench.Application === "DATAHUB" | bench.Application === "GRC SIEBEL" | bench.Application === "MAESTRO"
+            | bench.Application ==="PRESTO" | bench.Application === "GRAF" | bench.Application === "RONDO" | bench.Application === "SOPRANO"
+            | bench.Application === "TEMPO" | bench.Application === "TRIBOX" | bench.Application === "VIBRALTO" ){
+
+            document.getElementById('Bench').innerHTML += '{' + "\"Application\"" + ' : ' + '"'+cleanHTML(bench.Application)+ '"'+ ',' + '<br/>'
+            document.getElementById('Bench').innerHTML += "\"Unité de Packaging\"" + ' : ' + '"'+cleanHTML(bench["Unité de Packaging"])+ '"' + ',' + '<br/>'
+            document.getElementById('Bench').innerHTML += "\"Packages de livraison\"" + ' : ' + '["' + cleanHTMLInTab(bench["Packages de livraison"]) + '"],' + '<br/>'
+            document.getElementById('Bench').innerHTML += "\"Date d'installation\"" + ' : ' + '[ "' + cleanHTMLInTab(bench["Date d'installation"]) + '"]' + '<br/>' + '},'+'<br/>'
+        }
+    })
+
+    function cleanHTMLInTab(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '" , "');
+        }
+    }
+    function cleanHTML(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XnetAni</title>
+    <script src="XnetAni.js"></script>
+</head>
+<body>
+<h1 style="text-align: center"> XnetAni</h1>
+<a href="Bench.html">Bench</a>
+<a href="Rit.html">Rit</a>
+<a href="Cac.html"> Cac </a>
+<a href="Rim.html"> Rim</a>
+<a href="Renouv.html"> Renouv</a>
+<a href="Prod.html"> Prod</a>
+<a href="Formation.html"> Formation</a>
+<br/><br/>
+<p>XnetAni = [</p>
+<div id="xnetAni"></div>
+<p>]</p>
+<script>
+
+    XnetAni.forEach(function (xnetAni) {
+        if(xnetAni.Application === "ADDAGIO" | xnetAni.Application === "AVISE" | xnetAni.Application === "CAMELEON"
+            | xnetAni.Application === "CONTRALTO" | xnetAni.Application === "DATAHUB" | xnetAni.Application === "GRC SIEBEL" | xnetAni.Application === "MAESTRO"
+            | xnetAni.Application ==="PRESTO" | xnetAni.Application === "GRAF" | xnetAni.Application === "RONDO" | xnetAni.Application === "SOPRANO"
+            | xnetAni.Application === "TEMPO" | xnetAni.Application === "TRIBOX" | xnetAni.Application === "VIBRALTO" ){
+
+            document.getElementById('xnetAni').innerHTML += '{' + "\"Application\"" + ' : ' + '"'+cleanHTML(xnetAni.Application)+ '"'+ ',' + '<br/>'
+            document.getElementById('xnetAni').innerHTML += "\"Unité de Packaging\"" + ' : ' + '"'+cleanHTML(xnetAni["Unité de Packaging"])+ '"' + ',' + '<br/>'
+            document.getElementById('xnetAni').innerHTML += "\"Packages de livraison\"" + ' : ' + '["' + cleanHTMLInTab(xnetAni["Packages de livraison"]) + '"],' + '<br/>'
+            document.getElementById('xnetAni').innerHTML += "\"Date d'installation\"" + ' : ' + '[ "' + cleanHTMLInTab(xnetAni["Date d'installation"]) + '"]' + '<br/>' + '},'+'<br/>'
+        }
+    })
+
+    function cleanHTMLInTab(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '" , "');
+        }
+    }
+    function cleanHTML(str) {
+        if ((str===null) || (str==='')) {
+            return false;
+        } else {
+            str = str.toString();
+            return str.replace(/<[^>]*>/g, '');
+        }
+    }
+</script>
+</body>
+</html>
